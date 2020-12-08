@@ -29,7 +29,7 @@ def draw(context, attributes):
     """Draw a line on cairo context.
 
     :param context: The cairo context.
-    :param attributes: A dictionary which contains specific attributes of line (e.g. center point, radius).
+    :param attributes: A dictionary which contains specific attributes of line (e.g. start, end).
     """
 
     context.move_to(attributes['x1'], attributes['y1'])
