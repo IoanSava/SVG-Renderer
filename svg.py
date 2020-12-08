@@ -1,7 +1,7 @@
 import cairo
 import sys
 from helpers import xml
-from shapes import rectangle, circle
+from shapes import rectangle, circle, ellipse
 
 PIXEL_SCALE = 10
 PNG_FILENAME = 'outputs/image.png'
@@ -55,6 +55,8 @@ def fill_context(context, size, items):
             rectangle.draw(context, rectangle.get_attributes(item.attrib, size))
         elif item_tag == 'circle':
             circle.draw(context, circle.get_attributes(item.attrib))
+        elif item_tag == 'ellipse':
+            ellipse.draw(context, ellipse.get_attributes(item.attrib))
 
 
 def build_cairo_context(size, items, surface):
