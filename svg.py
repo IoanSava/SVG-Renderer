@@ -1,7 +1,7 @@
 import cairo
 import sys
 from helpers import xml
-from shapes import rectangle
+from shapes import rectangle, circle
 
 PIXEL_SCALE = 10
 PNG_FILENAME = 'outputs/image.png'
@@ -53,6 +53,8 @@ def fill_context(context, size, items):
         item_tag = xml.remove_namespace(item.tag)
         if item_tag == 'rect':
             rectangle.draw(context, rectangle.get_attributes(item.attrib, size))
+        elif item_tag == 'circle':
+            circle.draw(context, circle.get_attributes(item.attrib))
 
 
 def build_cairo_context(size, items, surface):
