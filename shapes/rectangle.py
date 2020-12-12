@@ -14,12 +14,12 @@ def get_attributes(svg_attributes, size):
 
     width, height = size
     attributes = {
-        'x': int(svg_attributes['x']) if 'x' in svg_attributes else 0,
-        'y': int(svg_attributes['y']) if 'y' in svg_attributes else 0,
-        'width': int(svg_attributes['width']) if not svg_attributes['width'].endswith('%') else int(int(
-            svg_attributes['width'][:-1]) / 100 * width),
-        'height': int(svg_attributes['height']) if not svg_attributes['height'].endswith('%') else int(int(
-            svg_attributes['height'][:-1]) / 100 * height)
+        'x': float(svg_attributes['x']) if 'x' in svg_attributes else 0,
+        'y': float(svg_attributes['y']) if 'y' in svg_attributes else 0,
+        'width': float(svg_attributes['width']) if not svg_attributes['width'].endswith('%') else
+        float(svg_attributes['width'][:-1]) / 100 * width,
+        'height': float(svg_attributes['height']) if not svg_attributes['height'].endswith('%') else
+        float(svg_attributes['height'][:-1]) / 100 * height
     }
 
     if 'fill' in svg_attributes:
@@ -30,7 +30,7 @@ def get_attributes(svg_attributes, size):
 
     if 'stroke' in svg_attributes and svg_attributes['stroke'] != 'none':
         attributes['stroke_color'] = colors.convert_color_to_rgb(svg_attributes['stroke'])
-        attributes['stroke_width'] = int(svg_attributes['stroke-width']) if 'stroke-width' in svg_attributes else 1
+        attributes['stroke_width'] = float(svg_attributes['stroke-width']) if 'stroke-width' in svg_attributes else 1
 
     return attributes
 

@@ -12,15 +12,15 @@ def get_attributes(svg_attributes):
     """
 
     attributes = {
-        'x1': int(svg_attributes['x1']) if 'x1' in svg_attributes else 0,
-        'y1': int(svg_attributes['y1']) if 'y1' in svg_attributes else 0,
-        'x2': int(svg_attributes['x2']) if 'x2' in svg_attributes else 0,
-        'y2': int(svg_attributes['y2']) if 'y2' in svg_attributes else 0
+        'x1': float(svg_attributes['x1']) if 'x1' in svg_attributes else 0,
+        'y1': float(svg_attributes['y1']) if 'y1' in svg_attributes else 0,
+        'x2': float(svg_attributes['x2']) if 'x2' in svg_attributes else 0,
+        'y2': float(svg_attributes['y2']) if 'y2' in svg_attributes else 0
     }
 
     if 'stroke' in svg_attributes and svg_attributes['stroke'] != 'none':
         attributes['stroke_color'] = colors.convert_color_to_rgb(svg_attributes['stroke'])
-        attributes['stroke_width'] = int(svg_attributes['stroke-width']) if 'stroke-width' in svg_attributes else 1
+        attributes['stroke_width'] = float(svg_attributes['stroke-width']) if 'stroke-width' in svg_attributes else 1
 
     return attributes
 

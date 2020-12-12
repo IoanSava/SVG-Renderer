@@ -9,5 +9,5 @@
 
     <ellipse cx="220" cy="70" rx="190" ry="20" fill="lime" />
 
-    <ellipse cx="210" cy="45" rx="170" ry="15" fill="yellow" stroke="blue" stroke-width="2"/>
+    <ellipse cx="210" cy="45" rx="170" ry="15" fill="yellow" stroke="blue" stroke-width="2.5"/>
 </svg>

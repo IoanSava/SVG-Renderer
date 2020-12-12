@@ -1,7 +1,7 @@
 import cairo
 import sys
 from helpers import xml
-from shapes import rectangle, circle, ellipse, line, polyline
+from shapes import rectangle, circle, ellipse, line, polyline, path
 
 PIXEL_SCALE = 10
 PNG_FILENAME = 'outputs/image.png'
@@ -61,6 +61,8 @@ def fill_context(context, size, items):
             line.draw(context, line.get_attributes(item.attrib))
         elif item_tag == 'polyline':
             polyline.draw(context, polyline.get_attributes(item.attrib))
+        elif item_tag == 'path':
+            path.draw(context, path.get_attributes(item.attrib))
 
 
 def build_cairo_context(size, items, surface):

@@ -5,7 +5,7 @@
 
     <rect width="300" height="200" fill="#fff444"/>
 
-    <rect x="150" y="100" fill="rgb(100, 60, 10)" width="40%" height="50"/>
+    <rect x="150" y="100" fill="rgb(100, 60, 90)" width="40%" height="50"/>
 
     <rect x="50" y="10" fill="none" width="40%" height="50" stroke="red" stroke-width="3"/>
 

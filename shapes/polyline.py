@@ -14,7 +14,7 @@ def parse_string_points_to_list(string_points):
     points = []
     for point in string_points.split():
         x, y = point.split(',')
-        points.append((int(x), int(y)))
+        points.append((float(x), float(y)))
 
     return points
 
@@ -39,7 +39,7 @@ def get_attributes(svg_attributes):
 
     if 'stroke' in svg_attributes and svg_attributes['stroke'] != 'none':
         attributes['stroke_color'] = colors.convert_color_to_rgb(svg_attributes['stroke'])
-        attributes['stroke_width'] = int(svg_attributes['stroke-width']) if 'stroke-width' in svg_attributes else 1
+        attributes['stroke_width'] = float(svg_attributes['stroke-width']) if 'stroke-width' in svg_attributes else 1
 
     return attributes
 

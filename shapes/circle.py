@@ -14,9 +14,9 @@ def get_attributes(svg_attributes):
     """
 
     attributes = {
-        'cx': int(svg_attributes['cx']) if 'cx' in svg_attributes else 0,
-        'cy': int(svg_attributes['cy']) if 'cy' in svg_attributes else 0,
-        'radius': int(svg_attributes['r'])
+        'cx': float(svg_attributes['cx']) if 'cx' in svg_attributes else 0,
+        'cy': float(svg_attributes['cy']) if 'cy' in svg_attributes else 0,
+        'radius': float(svg_attributes['r'])
     }
 
     if 'fill' in svg_attributes:
@@ -27,7 +27,7 @@ def get_attributes(svg_attributes):
 
     if 'stroke' in svg_attributes and svg_attributes['stroke'] != 'none':
         attributes['stroke_color'] = colors.convert_color_to_rgb(svg_attributes['stroke'])
-        attributes['stroke_width'] = int(svg_attributes['stroke-width']) if 'stroke-width' in svg_attributes else 1
+        attributes['stroke_width'] = float(svg_attributes['stroke-width']) if 'stroke-width' in svg_attributes else 1
 
     return attributes
 
